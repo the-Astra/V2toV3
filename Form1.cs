@@ -40,7 +40,11 @@ namespace Heck_V2toV3
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            Convert();
+            
+            if (MessageBox.Show("WARNING: This program will overwrite the difficulty file you selected.\nPlease make sure you have a backup and are sure you want to move on.\n\nPress 'OK' to continue.", "Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                Convert();
+            }
         }
 
         private void Convert()
